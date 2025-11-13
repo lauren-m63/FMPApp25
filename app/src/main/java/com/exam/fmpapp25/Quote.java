@@ -101,10 +101,6 @@ public class Quote {
         return volume;
     }
 
-    public Integer getAvgVolume() {
-        return avgVolume;
-    }
-
     public String getExchange() {
         return exchange;
     }
@@ -117,23 +113,115 @@ public class Quote {
         return previousClose;
     }
 
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+    public void setChangesPercentage(Float changesPercentage) {
+        this.changesPercentage = changesPercentage;
+    }
+
+    public void setChange(Float change) {
+        this.change = change;
+    }
+
+    public void setDayLow(Float dayLow) {
+        this.dayLow = dayLow;
+    }
+
+    public void setDayHigh(Float dayHigh) {
+        this.dayHigh = dayHigh;
+    }
+
+    public void setYearHigh(Float yearHigh) {
+        this.yearHigh = yearHigh;
+    }
+
+    public void setYearLow(Float yearLow) {
+        this.yearLow = yearLow;
+    }
+
+    public void setMarketCap(Float marketCap) {
+        this.marketCap = marketCap;
+    }
+
+    public void setPriceAvg50(Float priceAvg50) {
+        this.priceAvg50 = priceAvg50;
+    }
+
+    public void setPriceAvg200(Float priceAvg200) {
+        this.priceAvg200 = priceAvg200;
+    }
+
+    public void setVolume(Integer volume) {
+        this.volume = volume;
+    }
+
+    public Integer getAvgVolume() {
+        return avgVolume;
+    }
+
+    public void setAvgVolume(Integer avgVolume) {
+        this.avgVolume = avgVolume;
+    }
+
+    public void setExchange(String exchange) {
+        this.exchange = exchange;
+    }
+
+    public void setOpen(Float open) {
+        this.open = open;
+    }
+
+    public void setPreviousClose(Float previousClose) {
+        this.previousClose = previousClose;
+    }
+
     public Float getEps() {
         return eps;
+    }
+
+    public void setEps(Float eps) {
+        this.eps = eps;
     }
 
     public Float getPe() {
         return pe;
     }
 
+    public void setPe(Float pe) {
+        this.pe = pe;
+    }
+
     public String getEarningsAnnouncement() {
         return earningsAnnouncement;
+    }
+
+    public void setEarningsAnnouncement(String earningsAnnouncement) {
+        this.earningsAnnouncement = earningsAnnouncement;
     }
 
     public String getSharesOutstanding() {
         return sharesOutstanding;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public void setSharesOutstanding(String sharesOutstanding) {
+        this.sharesOutstanding = sharesOutstanding;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }

@@ -31,7 +31,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String API_KEY = "demo";
+    private static final String API_KEY = "boi";
+    //API key from website
     private final View.OnClickListener localListener = new View.OnClickListener(){
         @Override
         public void onClick(View v) {
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private void makeRequest(String ticker){
         // https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=demo
         ANRequest req = AndroidNetworking.get("https://financialmodelingprep.com/api/v3/quote/{ticker}")
-                .addPathParameter("ticker", ticker)
+                // everything before ? is base url
+                .addPathParameter("symbol", ticker)
                 .addQueryParameter("apikey", API_KEY)
                 .setPriority(Priority.LOW)
                 .build();
@@ -77,9 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     ((TextView) findViewById(R.id.priceAvg50Text)).setText(String.format(Locale.US,"%.2f", quote.getPriceAvg50()));
                     ((TextView) findViewById(R.id.dayRangeText)).setText(dayRange);
                     ((TextView) findViewById(R.id.yearRangeText)).setText(yearRange);
-                    ((TextView) findViewById(R.id.epsText)).setText(String.format(Locale.US,"%.3f", quote.getEps()));
-                    ((TextView) findViewById(R.id.sharesText)).setText(quote.getSharesOutstanding());
-                    ((TextView) findViewById(R.id.earningsText)).setText(date.toString());
+                    //((TextView) findViewById(R.id.epsText)).setText(String.format(Locale.US,"%.3f", quote.getEps()));
+                    // ((TextView) findViewById(R.id.earningsText)).setText(date.toString());
                     String toastText = "A share of " + quote.getName() + "is currently at $" + quote.getPrice();
                     Toast.makeText(getApplicationContext(),toastText, Toast.LENGTH_LONG).show();
                 }
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onError(ANError anError) {
                 // handle error
                 Toast.makeText(getApplicationContext(),"Error on getting data ", Toast.LENGTH_LONG).show();
+                Log.i("LAUREN", anError.getErrorDetail());
             }
         });
     }
